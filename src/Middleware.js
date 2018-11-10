@@ -11,6 +11,16 @@ const Middleware = () => {
     const nextMw = _middlewares[i]
     const next = err => _run(i + 1, err)
 
+    if (err) {
+      const isNextErrorMw = nextMw.length === 4
+
+      debug(`isNextErrorMw: ${isNextErrorMw}`)
+
+      return isNextErrorMw ?
+        nextMw(err, _req, _res, next) :
+        _run(i + 1, err)
+    }
+
     nextMw(_req, _res, next);
   }
 
