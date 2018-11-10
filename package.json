@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "^5.2.0",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "sinon": "^7.1.1"
   }
 }
