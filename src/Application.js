@@ -1,3 +1,4 @@
+const debug = require('../utils/debug')('Application');
 const http = require('http');
 
 const Application = () => {
@@ -9,6 +10,7 @@ const Application = () => {
 
   const listen = (port = 3000, hostname = '127.0.0.1', fn) => {
     _server.listen(port, hostname, fn)
+    debug('server is listening');
   }
 
   return {
