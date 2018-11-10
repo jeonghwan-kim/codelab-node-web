@@ -19,6 +19,7 @@ const Application = () => {
   }
 
   return {
+    _middleware,
     _server,
     use,
     listen
