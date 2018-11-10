@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node bin",
     "test": "mocha $(find ./ -name \"*.spec.js\")"
   },
   "keywords": [],
