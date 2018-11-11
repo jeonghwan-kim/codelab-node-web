@@ -14,7 +14,7 @@ const methodColorMap = {
 };
 
 const logger = () => (req, res, next) => {
-  const coloredMethod = method => {
+  const coloredMethod = (method = '') => {
     return `${methodColorMap[method.toLowerCase()]}${method}${colors.reset}`;
   };
 
