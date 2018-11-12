@@ -9,9 +9,7 @@ const listPosts = () => (req, res, next) => {
   fs.readFile(`${publicPath}/index.html`, (err, data) => {
     if (err) throw err;
 
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end(data);
+    res.status(200).set('Content-Type', 'text/html').send(data);
   })
 }
 
