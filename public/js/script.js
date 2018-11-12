@@ -24,7 +24,7 @@
 
   const api = {
     getPosts() {
-      return http('get', '/api/posts')
+      return http('get', '/api/posts?limit=2&page=1')
     }
   }
 
