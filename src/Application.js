@@ -2,13 +2,13 @@ const debug = require('../utils/debug')('Application');
 const http = require('http');
 const Middleware = require('./Middleware');
 const Response = require('./Response');
-
+const Request = require('./Request');
 
 const Application = () => {
   const _middleware = Middleware();
 
   const _server = http.createServer((req, res) => {
-    _middleware.run(req, Response(res));
+    _middleware.run(Request(req), Response(res));
   });
 
   const use = (path, fn) => {
