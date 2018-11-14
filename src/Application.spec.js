@@ -23,7 +23,6 @@ describe('Application', () => {
     });
   });
 
-
   describe('use()', () => {
     it('Middleware 모듈 인스턴스의 add() 메소드를 실행한다', () => {
       const spy = sinon.spy();
@@ -34,5 +33,17 @@ describe('Application', () => {
 
       should(spy.called).be.equal(true);
     })
-  })
+  });
+
+  describe('post()', () => {
+    it('메소드를 제공한다', () => {
+      should(typeof app.post).be.equal('function');
+    });
+  });
+
+  describe('get()', () => {
+    it('메소드를 제공한다', () => {
+      should(typeof app.get).be.equal('function');
+    })
+  });
 });
