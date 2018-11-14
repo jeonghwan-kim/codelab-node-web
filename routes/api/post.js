@@ -21,8 +21,18 @@ const index = () => (req, res, next) => {
 
 const create = () => (req, res, next) => {
 
-  debug(`create() ${req.body}`)
+  debug(`create() ${JSON.stringify(req.body)}`)
 
+  const {title, body} = req.body
+  const post = {title, body}
+
+  if (!post.title || !post.body) {
+    return res.status(400).send('parameter error')
+  }
+
+  posts = [post].concat(posts)
+
+  res.status(201).json(post)
 }
 
 
