@@ -1,4 +1,4 @@
-const debug = require('../../utils/debug')('api/post');
+const debug = require('debug')('api/post');
 
 let posts = [
   {title: 'post 3', body: 'this is post 3'},

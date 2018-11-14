@@ -1,9 +1,11 @@
-const debug = require('../utils/debug')('index');
+const debug = require('debug')('index');
 const path = require('path');
 const fs = require('fs');
 
 const listPosts = () => (req, res, next) => {
+
   debug('index()');
+
   const publicPath = path.join(__dirname, '../public');
 
   fs.readFile(`${publicPath}/index.html`, (err, data) => {
