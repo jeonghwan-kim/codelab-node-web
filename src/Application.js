@@ -23,6 +23,18 @@ const Application = () => {
     _middleware.add(fn);
   }
 
+  const get = (path, fn) => {
+    if (!path || !fn) throw Error('path and fn is required');
+    fn._method = 'get';
+    use(path, fn)
+  }
+
+  const post = (path, fn) => {
+    if (!path || !fn) throw Error('path and fn is required');
+    fn._method = 'post';
+    use(path, fn)
+  }
+
   const listen = (port = 3000, hostname = '127.0.0.1', fn) => {
     _server.listen(port, hostname, fn);
 
@@ -33,6 +45,8 @@ const Application = () => {
     _middleware,
     _server,
     use,
+    get,
+    post,
     listen
   }
 }
