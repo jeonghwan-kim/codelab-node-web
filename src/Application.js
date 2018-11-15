@@ -30,6 +30,16 @@ const Application = () => {
           res.end(data)
         }
       });
+    } else {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/html');
+
+      const filePath = path.join(__dirname, '../public/index.html')
+      fs.readFile(filePath, (err, data) => {
+        if (err) throw err;
+
+        res.end(data);
+      })
     }
   });
 
